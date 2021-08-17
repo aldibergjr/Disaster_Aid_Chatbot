@@ -5,9 +5,32 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+#  - mood_great
+#  - mood_unhappy
+#  - bot_challenge
+  -infrastructure_related
+  -aid_related
+
+entities:
+  -food
+  -shelter
+  -clothing
+  -money
+  -water
+
+
+slots:
+  food:
+    type: text
+  shelter:
+    type: text
+  clothing:
+    type: text
+  money:
+    type: text
+  water:
+    type: text
+  
 
 responses:
   utter_greet:
@@ -28,6 +51,8 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+
 
 session_config:
   session_expiration_time: 60
