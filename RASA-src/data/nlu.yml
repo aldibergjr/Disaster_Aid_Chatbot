@@ -34,6 +34,17 @@ nlu:
     - goodevening
     - good afternoon
     - Hi
+  
+- intent : weather_related
+  examples: |
+    - I would like to know what area of [Haiti](location) can be subject to [Hurricane](disaster) for the coming days? 
+    - what we have to do in case of [earth quake](disaster). 
+    - is there a [hurricane](disaster) [earthquake](disaster) again. please help me to know juste i know what im gonna do. 
+    - when there will be [earthquake](disaster) and [hurricane](disaster)
+    - [FLOOD](disaster) AT [CAYES](location). HELP US EMERGENCY 
+    - [Cyclone](disaster) we need help at [Thomazeau](location)
+    - Where can we find information about the [earthquake](disaster) please?
+
 - intent: goodbye
   examples: |
     - good afternoon

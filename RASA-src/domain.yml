@@ -10,12 +10,16 @@ intents:
   - bot_challenge
   - infrastructure_related
   - aid_related
+  - weather_related
 
 entities:
   - medical
   - resources
   - location
   - quantity
+  - disaster
+
+  
 
 
 slots:
@@ -26,6 +30,10 @@ slots:
   infrastructure:
     type: text
   location:
+    type: text
+  quantity:
+    type: text
+  disaster:
     type: text
 
 responses:
@@ -53,8 +61,13 @@ responses:
   - text: Your teams are heading to {location} carrying {quantity} {resources}.
   - text: Ok, requesting {quantity} {resources} to {location}.
 
+  weather_response:
+  - text: The authorities will always notify the population when there is a forecast of a natural disaster, always keep calm and follow the instructions.
+  - text: We've already notified the authorities will act briefly. 
+
 actions:
 - aid_information
+- weather_information
 
 forms:
   aid_information:
@@ -68,6 +81,14 @@ forms:
       location:
       - entity: location
         type: from_text
+  weather_information:
+    required_slots:
+      disaster:
+      - entity: disaster
+        type: from_text
+      location:
+      - entity: location
+        type: from_text  
         
 
 session_config:
