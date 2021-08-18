@@ -1,6 +1,13 @@
 version: "2.0"
 
 stories:
+- story: asking for aid
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: aid_related
+  - action: aid_information
+  - action: aid_response
 
 - story: happy path
   steps:
@@ -28,3 +35,33 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: aid_related
+  - action: aid_information
+  - action: aid_response
+  - intent: aid_related
+    entities:
+    - resources: food
+    - location: brazil
+  - slot_was_set:
+    - resources: food
+  - slot_was_set:
+    - location: brazil
+  - action: aid_information
+  - action: aid_response
+  - intent: aid_related
+    entities:
+    - quantity: 50 liters
+    - resources: water
+    - location: brazil
+  - slot_was_set:
+    - resources: water
+  - slot_was_set:
+    - location: brazil
+  - action: aid_information
+  - action: aid_response
+  - intent: stop

@@ -1,6 +1,23 @@
 version: "2.0"
-
 nlu:
+- intent: aid_related
+  examples: |
+    - Let's do it together, need [food](resources) in [Delma 75, in didine area](location)
+    - I am in [Leoganes](location), where can I get [food](resources)? Please
+    - we have problem at [Paco Lazon](location) this is General Police Department we want you to know we almost out of [food](resources) and [water](resources).
+    - There's nothing to [eat](resources) and water(resources), we starving(resources) and thirsty(resources)
+    - Please, we need [tents](resources) and [water](resources). We are in Silo, Thank you!
+    - We are in dire need of [food](resources), [water](resources) and [temporary shelter](resources). We need to know where we can get supplies. We are located in [Frere Boukan, La plaine](location).
+    - In Cap Haitian there are a lot of problems : lack of [food](resources), [medication](medical), [housing](resources)
+    - We have a big problem in [Jacmel](resources), we left Port-au-Prince without [food](resources), [clothes](resources) and [money](resources). we are really in a critical situation.
+    - I don't even have [clothes](resources) to wear.
+    - Our problem consist of [food](resources) and [underwear](resources). By God's grace come to our aid.
+    - We are sleeping in the street, some are [naked](resources)??
+    - My friends I can't take it anymore. I have no [home](resources), I am suffering with my wife and two children. All my [clothes](resources) are gone I'm [hungry](resources).
+    - The road is damaged and there is no gas, would like to find a motocycle. It costs 500 to go to Port-au-Prince. No one has any [money](resources).
+    - i am in need of sometinhg to drink
+    - [100 quilograms](quantity) of [wheat](resources) to [brazil](location)
+    - i want [50 liters](quantity) of [water](resources) to [brazil](location)
 - intent: greet
   examples: |
     - hey
@@ -16,7 +33,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
+    - Hi
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +47,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +55,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -49,44 +64,3 @@ nlu:
     - don't like that
     - no way
     - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?

@@ -5,32 +5,28 @@ intents:
   - goodbye
   - affirm
   - deny
-#  - mood_great
-#  - mood_unhappy
-#  - bot_challenge
-  -infrastructure_related
-  -aid_related
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - infrastructure_related
+  - aid_related
 
 entities:
-  -food
-  -shelter
-  -clothing
-  -money
-  -water
+  - medical
+  - resources
+  - location
+  - quantity
 
 
 slots:
-  food:
+  medical:
     type: text
-  shelter:
+  resources:
     type: text
-  clothing:
+  infrastructure:
     type: text
-  money:
+  location:
     type: text
-  water:
-    type: text
-  
 
 responses:
   utter_greet:
@@ -52,7 +48,27 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  aid_response:
+  - text: Dont worry, we are sending {quantity} {resources} to your location at, {location}
+  - text: Your teams are heading to {location} carrying {quantity} {resources}.
+  - text: Ok, requesting {quantity} {resources} to {location}.
 
+actions:
+- aid_information
+
+forms:
+  aid_information:
+    required_slots:
+      quantity:
+      - entity: quantity
+        type: from_text
+      resources:
+      - entity: resources
+        type: from_text
+      location:
+      - entity: location
+        type: from_text
+        
 
 session_config:
   session_expiration_time: 60
