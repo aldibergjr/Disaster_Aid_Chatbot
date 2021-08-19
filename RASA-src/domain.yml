@@ -56,18 +56,32 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  aid_response:
-  - text: Dont worry, we are sending {quantity} {resources} to your location at, {location}
-  - text: Your teams are heading to {location} carrying {quantity} {resources}.
+  utter_aid_response:
+  - text: Dont worry, we are sending {quantity} of {resources} to your location at, {location}
+  - text: Your teams are heading to {location} carrying {quantity} of {resources}.
   - text: Ok, requesting {quantity} {resources} to {location}.
+
+  utter_ask_resources:
+  - text: Please which resource do you need?
+  - text: With which resource can we help you?
+  - text: Please tell us what resource you are needing
+
+  utter_ask_quantity:
+  - text: please, how much do you need?
+  - text: tell us how much of your needed resource you need?
+
+  utter_ask_location:
+  - text: please tell us where you at
+  - text: where do we need to head?
+  - text: where are you? 
 
   weather_response:
   - text: The authorities will always notify the population when there is a forecast of a natural disaster, always keep calm and follow the instructions.
   - text: We've already notified the authorities will act briefly. 
 
-actions:
-- aid_information
-- weather_information
+#actions:
+#- aid_information
+#- weather_information
 
 forms:
   aid_information:
