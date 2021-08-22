@@ -6,10 +6,10 @@ nlu:
     - I am in [Leoganes](location), where can I get [food](resources)? Please
     - we have problem at [Paco Lazon](location) this is General Police Department we want you to know we almost out of [food](resources) and [water](resources).
     - There's nothing to [eat](resources) and water(resources), we starving(resources) and thirsty(resources)
-    - Please, we need [tents](resources) and [water](resources). We are in Silo, Thank you!
+    - Please, we need [tents](resources) and [water](resources). We are in [Silo](location), Thank you!
     - We are in dire need of [food](resources), [water](resources) and [temporary shelter](resources). We need to know where we can get supplies. We are located in [Frere Boukan, La plaine](location).
     - In Cap Haitian there are a lot of problems : lack of [food](resources), [medication](medical), [housing](resources)
-    - We have a big problem in [Jacmel](resources), we left Port-au-Prince without [food](resources), [clothes](resources) and [money](resources). we are really in a critical situation.
+    - We have a big problem in [Jacmel](location), we left Port-au-Prince without [food](resources), [clothes](resources) and [money](resources). we are really in a critical situation.
     - I don't even have [clothes](resources) to wear.
     - Our problem consist of [food](resources) and [underwear](resources). By God's grace come to our aid.
     - We are sleeping in the street, some are [naked](resources)??
@@ -18,6 +18,15 @@ nlu:
     - i am in need of sometinhg to drink
     - [100 quilograms](quantity) of [wheat](resources) to [brazil](location)
     - i want [50 liters](quantity) of [water](resources) to [brazil](location)
+- intent: ask_information
+  examples: |
+    - I want to know if there is any request for [food](resources) in [Port-au-Prince](location)
+    - Is there people needing [water](resources) in [Ohio](location)
+    - Is there people needing help?
+    - Does someone need [shelter](resources) in [Route Freres](location) ?
+    - Please, show me the requests for [money](resources)
+    - Show the requests for [water](resources) in [Haiti](location)
+    - Show requests in [new york](location)
 - intent: greet
   examples: |
     - hey

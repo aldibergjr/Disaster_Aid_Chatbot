@@ -11,6 +11,7 @@ intents:
   - infrastructure_related
   - aid_related
   - weather_related
+  - ask_information
 
 entities:
   - medical
@@ -61,6 +62,9 @@ responses:
   - text: Your teams are heading to {location} carrying {quantity} of {resources}.
   - text: Ok, requesting {quantity} {resources} to {location}.
 
+  utter_information_response:
+  - text: here is the request
+
   utter_ask_resources:
   - text: Please which resource do you need?
   - text: With which resource can we help you?
@@ -79,11 +83,19 @@ responses:
   - text: The authorities will always notify the population when there is a forecast of a natural disaster, always keep calm and follow the instructions.
   - text: We've already notified the authorities will act briefly. 
 
-#actions:
-#- aid_information
+actions:
+- find_information
 #- weather_information
 
 forms:
+  information_request:
+    required_slots:
+      resources:
+      - entity: resources
+        type: from_text
+      location:
+      - entity: location
+        type: from_text
   aid_information:
     required_slots:
       quantity:

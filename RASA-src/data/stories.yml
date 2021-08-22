@@ -11,6 +11,16 @@ stories:
   - active_loop: null
   - action: utter_aid_response
 
+- story: asking for information
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_information
+  - action: find_information
+  - active_loop: information_request
+  - active_loop: null
+  - action: null
+
 # - story: happy path
 #   steps:
 #   - intent: greet
