@@ -1,59 +1,86 @@
-version: "2.0"
+version: '2.0'
+config:
+  store_entities_as_slots: true
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - infrastructure_related
-  - aid_related
-  - weather_related
-  - ask_information
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- infrastructure_related:
+    use_entities: true
+- aid_related:
+    use_entities: true
+- weather_related:
+    use_entities: true
+- ask_information: 
+    user_entities: true
 
 entities:
-  - medical
-  - resources
-  - location
-  - quantity
-  - disaster
-
-  
-
+- medical
+- resources
+- location
+- quantity
+- disaster
 
 slots:
   medical:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   resources:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   infrastructure:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   location:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   quantity:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   disaster:
-    type: text
-
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
+  - text: Hey! How are you?
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
   utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
@@ -98,14 +125,14 @@ forms:
         type: from_text
   aid_information:
     required_slots:
+      location:
+      - entity: location
+        type: from_text
       quantity:
       - entity: quantity
         type: from_text
       resources:
       - entity: resources
-        type: from_text
-      location:
-      - entity: location
         type: from_text
   weather_information:
     required_slots:
@@ -114,9 +141,5 @@ forms:
         type: from_text
       location:
       - entity: location
-        type: from_text  
-        
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+        type: from_text
+e2e_actions: []
