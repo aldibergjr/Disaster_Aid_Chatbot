@@ -25,7 +25,7 @@ intents:
     use_entities: true
 - aid_related:
     use_entities: true
-- weather_related:
+- disaster_information:
     use_entities: true
 - ask_information: 
     user_entities: true
@@ -73,7 +73,7 @@ slots:
     
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - text: How can I help you?
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -108,13 +108,28 @@ responses:
   - text: where do we need to head?
   - text: where are you? 
 
-  weather_response:
-  - text: The authorities will always notify the population when there is a forecast of a natural disaster, always keep calm and follow the instructions.
-  - text: We've already notified the authorities will act briefly. 
+  utter_disaster_information:
+  - text: The authorities will always notify the population when there is a possibility of {disaster} on your area, always keep calm and follow the instructions.
+ 
+  utter_disaster_information_fire:
+  - text: Listen to emergency officials. If they say evacuate, leave your home immediately. Follow the authorities instructions, since they're already tracking the situation.
+
+  utter_disaster_information_earthquake:
+  - text: Make sure to not run outside or to other rooms during an earthquake. You are less likely to be injured if you stay where you are, and follow the authorities instructions for your area.
+  - text: When on an earthquake, cover your head and neck (and your entire body if possible) underneath a sturdy table or desk. If there is no shelter nearby, get down near an interior wall or next to low-lying furniture that won’t fall on you, and cover your head and neck with your arms and hands, and follow the authorities instructions for your area.
+
+  utter_disaster_information_hurricane:
+  - text: Stay away from low-lying and flood prone areas,and follow the authorities instructions for your area.
+  - text: Always stay indoors during a hurricane, because strong winds will blow things around and follow the authorities instructions for your area.
+
+  utter_disaster_information_flood:
+  - text: Do not walk, swim or drive through flood waters. Turn Around, Don't Drown! And always follow the authorities instructions, in case of evacution or rescue.
+
+
 
 actions:
 - find_information
-#- weather_information
+- give_disaster_information
 
 forms:
   information_request:
@@ -136,12 +151,9 @@ forms:
       resources:
       - entity: resources
         type: from_text
-  weather_information:
+  give_disaster_information:
     required_slots:
       disaster:
       - entity: disaster
-        type: from_text
-      location:
-      - entity: location
         type: from_text
 e2e_actions: []

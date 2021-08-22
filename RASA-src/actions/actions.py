@@ -49,3 +49,26 @@ class ActionFindInformation(Action):
         dispatcher.utter_message(text=result)
 
         return []
+
+class ActionGiveDisasterInformation(Action):
+
+    def name(self) -> Text:
+        return "give_disaster_information"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        time = tracker.latest_message['entities'][0]['value']
+        if time['disaster'] == "hurricane":
+            dispatcher.utter_message(template="utter_disaster_information_hurricane")
+        elif time['disaster'] == "fire":
+            dispatcher.utter_message(template="utter_disaster_information_fire")
+        elif time['disaster'] == "earthquake":
+            dispatcher.utter_message(template="utter_disaster_information_earthquake")
+        elif time['disaster'] == "flood":
+            dispatcher.utter_message(template="utter_disaster_information_flood")
+        else:
+            dispatcher.utter_message(template="utter_disaster_information")
+
+        return []  
