@@ -1,0 +1,58 @@
+[
+  {
+    "text": "The road is damaged and there is no gas, would like to find a motocycle. It costs 500 to go to Port-au-Prince. No one has any money.",
+    "entities": [
+      {
+        "start": 126,
+        "end": 131,
+        "value": "money",
+        "entity": "resources"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "quantity",
+        "start": 82,
+        "end": 85,
+        "confidence_entity": 0.5165484547615051,
+        "value": "500",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "resources",
+        "start": 126,
+        "end": 131,
+        "confidence_entity": 0.9989827275276184,
+        "value": "money",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I want to know if there is any request for food in Port-au-Prince",
+    "entities": [
+      {
+        "start": 43,
+        "end": 47,
+        "value": "food",
+        "entity": "resources"
+      },
+      {
+        "start": 51,
+        "end": 65,
+        "value": "Port-au-Prince",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "resources",
+        "start": 43,
+        "end": 47,
+        "confidence_entity": 0.9993103742599487,
+        "value": "food",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

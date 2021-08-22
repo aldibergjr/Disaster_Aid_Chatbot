@@ -1,0 +1,20 @@
+version: "2.0"
+stories:
+- story: asking for help1 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: aid_related
+    entities:
+    - quantity: 100 kg
+    - resources: food
+    - location: brazil
+  - slot_was_set:
+    - resources: food
+  - slot_was_set:
+    - location: brazil
+  - slot_was_set:
+    - quantity: 100 kg
+  - action: aid_information
+  - active_loop: aid_information
+  - action: utter_aid_response  # predicted: action_listen

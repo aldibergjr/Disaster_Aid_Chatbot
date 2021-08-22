@@ -1,0 +1,55 @@
+{
+  "resources": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 31,
+    "confused_with": {}
+  },
+  "quantity": {
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1-score": 0.888888888888889,
+    "support": 4,
+    "confused_with": {}
+  },
+  "medical": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1,
+    "confused_with": {}
+  },
+  "disaster": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "location": {
+    "precision": 1.0,
+    "recall": 0.9615384615384616,
+    "f1-score": 0.9803921568627451,
+    "support": 26,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9861111111111112,
+    "recall": 0.9861111111111112,
+    "f1-score": 0.9861111111111112,
+    "support": 72
+  },
+  "macro avg": {
+    "precision": 0.96,
+    "recall": 0.9923076923076923,
+    "f1-score": 0.9738562091503267,
+    "support": 72
+  },
+  "weighted avg": {
+    "precision": 0.9888888888888889,
+    "recall": 0.9861111111111112,
+    "f1-score": 0.9867465504720406,
+    "support": 72
+  }
+}
