@@ -25,5 +25,14 @@ stories:
     intent: ask_information
   - action: find_information
   - active_loop: information_request
-    
-    
+- story: asking for disaster information
+  steps:
+  - user: |
+      Hello!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      i am at a flood, what do i do?
+    intent: disaster_information
+  - action: give_disaster_information
+  - active_loop: give_disaster_information 

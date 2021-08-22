@@ -21,6 +21,15 @@ stories:
   - active_loop: null
   - action: null
 
+- story: disaster information
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: disaster_information
+  - action: give_disaster_information
+  - active_loop: give_disaster_information
+  - active_loop: null
+  - action: null
 # - story: happy path
 #   steps:
 #   - intent: greet
