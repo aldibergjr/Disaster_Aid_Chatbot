@@ -29,6 +29,8 @@ intents:
     use_entities: true
 - ask_information: 
     user_entities: true
+- start:
+    user_entities: true
 
 entities:
 - medical
